@@ -20,9 +20,7 @@
         
         .btn { display: inline-flex; align-items: center; gap: 20px; background: #25D366; color: white; padding: 20px 50px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 28px; margin-top: 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.2s; }
         .btn span.btn-icon { font-size: 60px; line-height: 1; }
-        
-        /* BOTÃO WHATSAPP MAIS SUAVE */
-        .btn:active { transform: scale(0.98); background-color: #128C7E; }
+        .btn:active { transform: scale(0.99); background-color: #128C7E; }
 
         .container { padding: 60px 20px; max-width: 1200px; margin: auto; }
         h2 { color: #267365; text-align: center; font-size: 38px; margin-bottom: 50px; text-transform: uppercase; }
@@ -38,23 +36,22 @@
             align-items: center; 
             gap: 25px; 
             border-top: 8px solid #f26d21; 
-            /* TRANSIÇÃO SUAVIZADA */
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            transition: all 0.2s ease-out;
             cursor: pointer; 
             -webkit-tap-highlight-color: transparent; 
         }
         
-        /* SENSIBILIDADE REDUZIDA (0.5x) */
+        /* HOVER NO MOUSE (MANTIDO LEVE) */
         .card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12); 
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
             border-top-color: #267365; 
         }
 
-        /* AJUSTE ESPECÍFICO PARA TOQUE NO CELULAR */
+        /* SENSIBILIDADE ULTRA BAIXA NO TOUCH (0.1) */
         .card:active { 
-            transform: translateY(-4px) scale(0.99); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transform: translateY(-1px) scale(0.995); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
         }
         
         .icon { font-size: 110px; min-width: 120px; text-align: center; line-height: 1; }
