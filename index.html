@@ -20,7 +20,7 @@
         
         .btn { display: inline-flex; align-items: center; gap: 20px; background: #25D366; color: white; padding: 20px 50px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 28px; margin-top: 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.2s; }
         .btn span.btn-icon { font-size: 60px; line-height: 1; }
-        .btn:active { transform: scale(0.99); background-color: #128C7E; }
+        .btn:active { transform: scale(0.98); background-color: #128C7E; }
 
         .container { padding: 60px 20px; max-width: 1200px; margin: auto; }
         h2 { color: #267365; text-align: center; font-size: 38px; margin-bottom: 50px; text-transform: uppercase; }
@@ -36,22 +36,27 @@
             align-items: center; 
             gap: 25px; 
             border-top: 8px solid #f26d21; 
-            transition: all 0.2s ease-out;
+            transition: transform 0.1s ease-out, box-shadow 0.1s ease-out; /* Transição ainda mais rápida */
             cursor: pointer; 
             -webkit-tap-highlight-color: transparent; 
+            user-select: none; /* Evita que o texto fique selecionado ao tocar rápido */
         }
         
-        /* HOVER NO MOUSE (MANTIDO LEVE) */
-        .card:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-            border-top-color: #267365; 
+        /* HOVER PARA COMPUTADOR */
+        @media (hover: hover) {
+            .card:hover { 
+                transform: translateY(-5px); 
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+                border-top-color: #267365; 
+            }
         }
 
-        /* SENSIBILIDADE ULTRA BAIXA NO TOUCH (0.1) */
+        /* TOQUE ÚNICO PARA CELULAR */
         .card:active { 
-            transform: translateY(-1px) scale(0.995); 
+            transform: translateY(-2px) scale(0.99); 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border-top-color: #267365;
+            background-color: #fafafa;
         }
         
         .icon { font-size: 110px; min-width: 120px; text-align: center; line-height: 1; }
@@ -75,9 +80,7 @@
         }
     </style>
 </head>
-<body ontouchstart="">
-
-<header>
+<body ontouchstart=""> <header>
     <div class="logo"><img src="logo.JPG" alt="Logo Agility Vet"></div>
     <div class="contato-topo">
         <span class="big-emoji">🚑</span>
