@@ -20,14 +20,11 @@
         
         .btn { display: inline-flex; align-items: center; gap: 20px; background: #25D366; color: white; padding: 20px 50px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 28px; margin-top: 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.3s; }
         .btn span.btn-icon { font-size: 60px; line-height: 1; }
-        
-        /* ANIMAÇÃO DO BOTÃO WHATSAPP */
-        .btn:hover { transform: scale(1.05); background-color: #128C7E; }
+        .btn:hover, .btn:active { transform: scale(1.05); background-color: #128C7E; }
 
         .container { padding: 60px 20px; max-width: 1200px; margin: auto; }
         h2 { color: #267365; text-align: center; font-size: 38px; margin-bottom: 50px; text-transform: uppercase; }
 
-        /* CARDS DE SERVIÇOS COM ANIMAÇÃO VOLTADA */
         .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
         
         .card { 
@@ -39,15 +36,15 @@
             align-items: center; 
             gap: 25px; 
             border-top: 8px solid #f26d21; 
-            transition: all 0.4s ease; /* Tempo da animação */
-            cursor: default;
+            transition: all 0.4s ease;
+            cursor: pointer; 
+            -webkit-tap-highlight-color: transparent; 
         }
         
-        /* O EFEITO DE HOVER QUE VOCÊ ADOROU */
-        .card:hover { 
-            transform: translateY(-15px); /* O balão sobe */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* A sombra aumenta */
-            border-top-color: #267365; /* Muda a cor da borda ao passar o mouse */
+        .card:hover, .card:active { 
+            transform: translateY(-15px); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+            border-top-color: #267365; 
         }
         
         .icon { font-size: 110px; min-width: 120px; text-align: center; line-height: 1; }
@@ -58,18 +55,21 @@
         .video-section { background: #fff; padding: 70px 20px; text-align: center; }
         video { width: 100%; max-width: 950px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 8px solid #fff; }
 
-        footer { background: #267365; color: white; text-align: center; padding: 60px 20px; margin-top: 60px; }
-        footer b { color: #f26d21; font-size: 28px; }
+        footer { background: #267365; color: white; padding: 60px 20px; margin-top: 60px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+        .footer-brand { color: #f26d21; font-size: 32px; font-weight: bold; margin-bottom: 10px; }
+        .footer-section h3 { color: #f26d21; font-size: 28px; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid rgba(255,255,255,0.1); display: inline-block; padding-bottom: 5px; }
+        .footer-section p { font-size: 20px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .footer-icon { font-size: 24px; }
 
         @media (max-width: 900px) {
             .logo img { height: 250px; }
             .icon { font-size: 80px; min-width: 90px; }
             .contato-topo span.big-emoji { font-size: 60px; }
-            .card:hover { transform: translateY(-5px); } /* Menos movimento no celular */
+            .card:hover, .card:active { transform: translateY(-8px); }
         }
     </style>
 </head>
-<body>
+<body ontouchstart="">
 
 <header>
     <div class="logo"><img src="logo.JPG" alt="Logo Agility Vet"></div>
@@ -91,6 +91,7 @@
 <div class="container">
     <h2>Nossos Serviços Especializados</h2>
     <div class="servicos-grid">
+        
         <div class="card">
             <div class="icon">🚑</div>
             <div class="card-text"><b>Ambulância Completa</b><span>Remoção Simples e UTI em veículos equipados.</span></div>
@@ -117,7 +118,7 @@
         </div>
         <div class="card">
             <div class="icon">💊</div>
-            <div class="card-text"><b>Controle de Dor</b><span>Medicações para o conforto e bem-estar do paciente.</span></div>
+            <div class="card-text"><b>Controle de Dor e Bem-Estar</b><span>Medicações para o conforto e bem-estar do paciente.</span></div>
         </div>
         <div class="card">
             <div class="icon">💉</div>
@@ -131,6 +132,75 @@
             <div class="icon">⚡</div>
             <div class="card-text"><b>Desfibrilação</b><span>Suporte completo para emergências cardíacas.</span></div>
         </div>
+        <div class="card">
+            <div class="icon">🐶</div>
+            <div class="card-text"><b>Leve e Traga para Exames</b><span>Pontualidade absoluta com espera inclusa para exames.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">😺</div>
+            <div class="card-text"><b>Remoção Low-Stress</b><span>Transporte especializado para pacientes acamados ou com dor.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🩺</div>
+            <div class="card-text"><b>Suporte de Emergência</b><span>Unidade de UTI móvel equipada para estabilização imediata.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🗺️</div>
+            <div class="card-text"><b>Rede de Transferências</b><span>Conectamos residências e hospitais em toda a Grande SP.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🩹</div>
+            <div class="card-text"><b>Suporte Pós-Operatório</b><span>Transporte assistido para animais em recuperação cirúrgica.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🧬</div>
+            <div class="card-text"><b>Home Care Assistido</b><span>Transporte para fisioterapia, hemodiálise ou quimioterapia.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🌍</div>
+            <div class="card-text"><b>Traslado Aeroportuário</b><span>Logística segura e climatizada para embarque e desembarque.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🏢</div>
+            <div class="card-text"><b>Check-in Hospitalar</b><span>Cuidamos de toda a burocracia de internação pelo tutor.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🩸</div>
+            <div class="card-text"><b>Logística de Emergência Sanguínea</b><span>Transporte ultrarrápido de bolsas de sangue veterinárias.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🦮</div>
+            <div class="card-text"><b>Pet Senior & Mobilidade</b><span>Transporte adaptado com rampas para cães idosos.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🕊️</div>
+            <div class="card-text"><b>Despedida Digna</b><span>Suporte sensível para transporte em casos de óbito.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🦠</div>
+            <div class="card-text"><b>Logística de Biópsias e Coletas</b><span>Retirada e entrega expressa de amostras biológicas.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🦾</div>
+            <div class="card-text"><b>Adaptação de Órteses e Cadeiras</b><span>Transporte especializado para centros de reabilitação.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🐩</div>
+            <div class="card-text"><b>Maternidade Pet</b><span>Transporte monitorado para fêmeas em trabalho de parto.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🌡️</div>
+            <div class="card-text"><b>Logística de Vacinação</b><span>Suporte para campanhas de imunização em massa.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🧠</div>
+            <div class="card-text"><b>Transporte Neuro-Reabilitação</b><span>Veículo com amortecimento para crises neurológicas.</span></div>
+        </div>
+        <div class="card">
+            <div class="icon">🐾</div>
+            <div class="card-text"><b>Leva e Traz Especializado</b><span>Banho & Tosa Clínico com suporte médico necessário.</span></div>
+        </div>
+        
     </div>
 </div>
 
@@ -142,4 +212,22 @@
 </div>
 
 <footer>
-    <p><b>AGILITY VET - UTI MÓVEL</b>
+    <div class="footer-brand">AGILITY VET - UTI MÓVEL</div>
+    
+    <div class="footer-section">
+        <h3>📍 Nossas Bases</h3>
+        <p><span class="footer-icon">🏢</span> Rua Pindaibal, 83</p>
+        <p><span class="footer-icon">🏢</span> Rua Alfredo Gioielli, 212</p>
+        <p><span class="footer-icon">🏢</span> Rua Comandante Sampaio, 801</p>
+    </div>
+    
+    <div class="footer-section">
+        <h3>📞 Contato 24 Horas</h3>
+        <p><span class="footer-icon">📱</span> (11) 92165-8656</p>
+        <p><span class="footer-icon">📱</span> (11) 94175-8656</p>
+        <p><span class="footer-icon">📧</span> agilityambulanciavet@gmail.com</p>
+    </div>
+</footer>
+
+</body>
+</html>
