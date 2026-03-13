@@ -20,7 +20,7 @@
         
         .btn { display: inline-flex; align-items: center; gap: 20px; background: #25D366; color: white; padding: 20px 50px; border-radius: 60px; text-decoration: none; font-weight: bold; font-size: 28px; margin-top: 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.2s; }
         .btn span.btn-icon { font-size: 60px; line-height: 1; }
-        .btn:active { transform: scale(0.98); background-color: #128C7E; }
+        .btn:active { transform: scale(0.95); background-color: #128C7E; }
 
         .container { padding: 60px 20px; max-width: 1200px; margin: auto; }
         h2 { color: #267365; text-align: center; font-size: 38px; margin-bottom: 50px; text-transform: uppercase; }
@@ -53,22 +53,27 @@
         .card b { color: #267365; font-size: 22px; display: block; margin-bottom: 8px; }
         .card span { font-size: 18px; color: #555; }
 
-        .video-section { background: #fff; padding: 70px 20px; text-align: center; }
+        /* SEÇÃO DE VÍDEO COM ESPAÇO REDUZIDO NA BASE */
+        .video-section { 
+            background: #fff; 
+            padding: 70px 20px 20px 20px; 
+            text-align: center; 
+        }
         video { width: 100%; max-width: 950px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 8px solid #fff; }
 
-        /* NOVO AJUSTE DA SIRENE (CENTRALIZADA) */
+        /* SIRENE SEM ESPAÇO SUPERIOR */
         .sirene-wrapper {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-top: 40px;
-            margin-bottom: -10px; /* Mantém a sirene encostada no verde */
+            margin-top: 0px; 
+            margin-bottom: -20px; 
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
 
         .sirene-gif {
-            width: 220px; /* Tamanho ajustado para o novo arquivo */
+            width: 220px;
             height: auto;
             display: block;
         }
