@@ -8,8 +8,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
         body { background-color: #f4f8f7; color: #333; line-height: 1.6; }
         
+        /* HEADER CENTRALIZADO */
         header { background: #fff; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .logo img { height: 600px; width: auto; max-width: 95%; object-fit: contain; margin-bottom: 20px; }
+        
+        /* LOGO DESKTOP DIMINUIDO (1.5x menor que o anterior de 900px) */
+        .logo img { 
+            height: 600px; 
+            width: auto; 
+            max-width: 100%; 
+            object-fit: contain; 
+            margin-bottom: 20px; 
+        }
         
         .contato-topo { color: #f26d21; font-size: 32px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .contato-topo span.big-emoji { font-size: 90px; line-height: 1; }
@@ -22,26 +31,17 @@
         .btn span.btn-icon { font-size: 60px; line-height: 1; }
         .btn:active { transform: scale(0.95); background-color: #128C7E; }
 
-        .container { padding: 60px 20px; max-width: 1200px; margin: auto; }
-        h2 { color: #267365; text-align: center; font-size: 38px; margin-bottom: 50px; text-transform: uppercase; }
+        .container { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        h2 { color: #267365; text-align: left; font-size: 38px; margin-bottom: 50px; text-transform: uppercase; }
 
         .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
         
         .card { 
-            background: white; 
-            padding: 35px; 
-            border-radius: 25px; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
-            display: flex; 
-            align-items: center; 
-            gap: 25px; 
-            border-top: 8px solid #f26d21; 
-            transition: all 0.3s ease;
-            cursor: pointer; 
-            -webkit-tap-highlight-color: transparent; 
-            user-select: none;
+            background: white; padding: 35px; border-radius: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+            display: flex; align-items: center; gap: 25px; border-top: 8px solid #f26d21; 
+            transition: all 0.3s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none;
         }
-        
+
         @media (hover: hover) {
             .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top-color: #267365; }
         }
@@ -63,45 +63,57 @@
         .card b { color: #267365; font-size: 22px; display: block; margin-bottom: 8px; }
         .card span { font-size: 18px; color: #555; }
 
+        /* SEÇÃO FAQ - TUDO ALINHADO NA MARGEM ESQUERDA */
+        .faq-section { background: #fff; padding: 60px 20px; }
+        .faq-container { max-width: 1000px; margin: 0 auto; text-align: left; }
+        .faq-container h2 { text-align: left; margin-bottom: 30px; }
+        
+        .faq-item { border-bottom: 2px solid #f4f8f7; padding: 10px 0; transition: all 0.3s ease; }
+        .faq-item:hover, .faq-item:active { background-color: #f0fdfa; border-radius: 15px; padding-left: 10px; }
+
+        details summary { 
+            font-size: 20px; font-weight: bold; color: #267365; cursor: pointer; 
+            list-style: none; display: flex; justify-content: flex-start; align-items: center;
+            gap: 15px; padding: 15px 0;
+        }
+
+        details summary::before { content: '🤔'; font-size: 26px; transition: 0.4s; }
+        details[open] summary::before { content: '✅'; transform: scale(1.2) rotate(360deg); }
+
+        details p { 
+            padding: 20px; font-size: 18px; color: #445566; line-height: 1.6;
+            background-color: #ffffff; border-left: 8px solid #f26d21; 
+            margin: 5px 0 20px 0; border-radius: 0 20px 20px 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.03); text-align: left;
+        }
+
         .video-section { background: #fff; padding: 70px 20px 20px 20px; text-align: center; }
+        .video-section h2 { text-align: center; }
         video { width: 100%; max-width: 950px; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 8px solid #fff; }
 
         .sirene-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: -20px; position: relative; z-index: 10; }
         .sirene-gif { width: 220px; height: auto; display: block; }
 
-        footer { 
-            background: #267365; 
-            color: white; 
-            padding: 60px 20px 30px 20px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center; 
-            gap: 20px; 
-        }
-
+        footer { background: #267365; color: white; padding: 60px 20px 30px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
         .footer-brand { color: #f26d21; font-size: 32px; font-weight: bold; margin-bottom: 10px; }
         .footer-section h3 { color: #f26d21; font-size: 28px; margin-bottom: 15px; text-transform: uppercase; }
         .footer-section p { font-size: 20px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-        .gif-final-container {
-            background: #fff; 
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        .gif-final-container img {
-            max-width: 350px;
-            height: auto;
-            border-radius: 20px;
-        }
+        .gif-final-container { background: #fff; padding: 40px 20px; display: flex; justify-content: center; width: 100%; }
+        .gif-final-container img { max-width: 350px; height: auto; border-radius: 20px; }
 
+        /* AJUSTES MOBILE (AUMENTO DO LOGO EM 0.5x PARA 1125px) */
         @media (max-width: 900px) {
-            .logo img { height: 250px; }
-            .icon { font-size: 80px; min-width: 90px; }
+            header { text-align: center; }
+            .logo img { height: 1125px; } /* Aumento para mobile solicitado */
+            .contato-topo { flex-direction: column; justify-content: center; text-align: center; font-size: 20px; }
             .contato-topo span.big-emoji { font-size: 60px; }
+            
+            .container h2, .faq-container h2 { text-align: center; } /* Títulos centralizados no mobile para melhor leitura */
+            .icon { font-size: 80px; min-width: 90px; }
             .gif-final-container img { max-width: 250px; }
+            details summary { font-size: 18px; }
+            details p { font-size: 16px; }
         }
     </style>
 </head>
@@ -119,8 +131,7 @@
     <h1>Agility Vet</h1>
     <p>Ambulância e UTI Móvel Veterinária de Alta Complexidade</p>
     <a href="https://wa.me/5511921658656" class="btn">
-        <span class="btn-icon">📞</span>
-        CONVERSAR NO WHATSAPP
+        <span class="btn-icon">📞</span> CONVERSAR NO WHATSAPP
     </a>
 </div>
 
@@ -133,7 +144,7 @@
         <div class="card"><div class="icon">🏥</div><div class="card-text"><b>Equipamento de Ponta</b><span>Tecnologia avançada para suporte de vida.</span></div></div>
         <div class="card"><div class="icon">🌬️</div><div class="card-text"><b>Ventilação Mecânica</b><span>Suporte respiratório para casos críticos.</span></div></div>
         <div class="card"><div class="icon">🧪</div><div class="card-text"><b>Oxigenioterapia</b><span>Suporte de oxigênio contínuo durante o transporte.</span></div></div>
-        <div class="card"><div class="icon">💊</div><div class="card-text"><b>Controle de Dor e Bem-Estar</b><span>Medicações para o conforto e bem-estar do paciente.</span></div></div>
+        <div class="card"><div class="icon">💊</div><div class="card-text"><b>Controle de Dolor e Bem-Estar</b><span>Medicações para o conforto e bem-estar do paciente.</span></div></div>
         <div class="card"><div class="icon">💉</div><div class="card-text"><b>Drogas Vasoativas</b><span>Administração de fármacos de suporte hemodinâmico.</span></div></div>
         <div class="card"><div class="icon">❤️</div><div class="card-text"><b>Reanimação (RCP)</b><span>Equipe treinada para manobras de emergência.</span></div></div>
         <div class="card"><div class="icon">⚡</div><div class="card-text"><b>Desfibrilação</b><span>Suporte completo para emergências cardíacas.</span></div></div>
@@ -160,6 +171,117 @@
 <div class="video-section">
     <h2>Conheça Nossa Estrutura</h2>
     <video controls><source src="Video.MP4" type="video/mp4"></video>
+</div>
+
+<div class="faq-section">
+    <div class="faq-container">
+        <h2>Dúvidas Frequentes</h2>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais regiões vocês atendem?</summary>
+                <p>Atendemos toda a Grande São Paulo, ABCD e interior, com bases estratégicas para garantir agilidade no socorro.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais as formas de pagamento aceitas?</summary>
+                <p>Aceitamos cartões de crédito (com opção de parcelamento), débito e PIX.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>A ambulância possui oxigênio e equipamentos de UTI?</summary>
+                <p>Sim, nossas unidades são UTIs Móveis completas, equipadas com oxigenioterapia, monitorização multiparamétrica e suporte avançado de vida.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quanto tempo demora para a ambulância chegar?</summary>
+                <p>Nosso tempo de resposta é imediato. Assim que o chamado é confirmado, a unidade mais próxima é acionada. O tempo final depende do trânsito e da localização, mas mantemos o tutor informado.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Vocês fazem apenas transporte ou atendem em casa também?</summary>
+                <p>Nosso foco é o suporte avançado e transporte para hospitais. No entanto, realizamos a estabilização imediata no local para que o paciente tenha condições seguras de ser removido.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais espécies vocês transportam?</summary>
+                <p>Somos especialistas no transporte de cães e gatos de todos os portes, possuindo equipamentos adaptados desde filhotes até animais de grande porte.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Preciso agendar com antecedência para exames?</summary>
+                <p>Para casos de "Leva e Traz" de exames ou fisioterapia, recomendamos o agendamento prévio de 24h, mas sempre consulte nossa disponibilidade para o mesmo dia.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona o transporte para outros estados ou aeroportos?</summary>
+                <p>Realizamos logística interestadual e traslados aeroportuários com suporte médico contínuo, garantindo que o pet chegue ao destino com segurança.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Vocês transportam animais com doenças infectocontagiosas?</summary>
+                <p>Sim. Nossas unidades passam por um rigoroso processo de desinfecção e esterilização após cada atendimento, seguindo protocolos hospitalares.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como é feita a remoção de animais que não conseguem andar?</summary>
+                <p>Utilizamos macas retráteis e equipamentos de imobilização específicos para animais acamados ou com problemas de coluna, garantindo uma remoção segura e sem dor.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O serviço funciona em feriados e madrugadas?</summary>
+                <p>Sim, nossa operação é 24 horas por dia, 7 dias por semana, incluindo feriados e finais de semana.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>A ambulância leva para qualquer hospital?</summary>
+                <p>Levamos para o hospital de sua preferência ou para o especialista indicado. Se necessário, nossa equipe sugere centros de referência próximos.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O oxigênio é cobrado à parte durante o trajeto?</summary>
+                <p>Não. Todos os suportes vitais necessários durante o transporte já estão inclusos no serviço de remoção em UTI.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Vocês transportam animais de grande porte?</summary>
+                <p>Sim, nossas ambulâncias são amplas e adaptadas para suportar cães de raças gigantes com total segurança.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>E se o animal tiver uma parada cardíaca durante o trajeto?</summary>
+                <p>Nossa equipe é treinada em RCP avançada e a ambulância é equipada com desfibrilador e drogas vasoativas para intervenção imediata.</p>
+            </details>
+        </div>
+    </div>
 </div>
 
 <div class="sirene-wrapper">
